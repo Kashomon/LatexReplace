@@ -29,6 +29,12 @@ In other words, this is the behavior of `LatexMathReplace foo/bar`:
     $foo$ => $bar$
     $\foobiff$ => $\foobiff$
 
+and `LatexMathReplace \foo/\bar` (not ideal):
+
+    $foo$ => $foo$
+    $\foo$ => $\bar$
+    $\foobiff$ => $\barbiff$
+
 ### Mappings
 
 If you want to alias LatexMathReplace, you might try something like:
