@@ -20,18 +20,22 @@ function! latex_replace#MathMode(arg)
 
   if search_term =~ '^\'
     let search_term = search_term . '\>'
-    let last_capture_group = '\3'
   else
     " Make sure that the search term isn't part of some macro
     let search_term = '\(\\\h*\)\@<!' . search_term
-    let last_capture_group = '\4'
   endif
 
   " Go through each pattern, doing a separate replace for each case.
+  let bpos = getpos('.')
+  let bpos[1] = 0
+  let view = winsaveview()
+
   for idx in range(4)
+    call setpos('.', bpos)
     let search = '\(' . start[idx] . internal_match . '\)'
       \ . '\(' . internal_match . end[idx] . '\)'
-    execute '%s/' . search . "/\\=substitute(submatch(0),'"
-        \ . search_term . "','" . replace_term . "','g')/"
+    silent execute '%s/' . search . "/\\=substitute(submatch(0),'"
+        \ . search_term . "','" . replace_term . "','g')/ge"
   endfor
+  call winrestview(view)
 endfunction
