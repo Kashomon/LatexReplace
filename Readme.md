@@ -29,11 +29,11 @@ In other words, this is the behavior of `LatexMathReplace foo/bar`:
     $foo$ => $bar$
     $\foobiff$ => $\foobiff$
 
-and `LatexMathReplace \foo/\bar` (not ideal):
+and `LatexMathReplace \\foo/\bar`
 
     $foo$ => $foo$
     $\foo$ => $\bar$
-    $\foobiff$ => $\barbiff$
+    $\foobiff$ => $\foobiff$
 
 ### Mappings
 
