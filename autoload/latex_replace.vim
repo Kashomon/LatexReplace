@@ -1,6 +1,6 @@
 function! latex_replace#MathMode(arg)
   "Split on / but allow for \/
-  let splat = split(a:arg, '[^\\]\@<=/')
+  let splat = split(a:arg, '\\\@<!/')
   let search_term = splat[0]
   let replace_term = splat[1]
   if len(splat) != 2
