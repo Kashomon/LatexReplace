@@ -27,16 +27,22 @@ macro, LatexMathReplace will replace the macro.
 
 ### Examples
 
-This is the behavior of `LatexMathReplace foo/bar`:
+`LatexMathReplace foo/bar`:
 
     $foo$ => $bar$
     $\foobiff$ => $\foobiff$
 
-and `LatexMathReplace \\foo/\bar`
+`LatexMathReplace \\foo/\bar`
 
     $foo$ => $foo$
     $\foo$ => $\bar$
     $\foobiff$ => $\foobiff$
+
+`LatexMathReplace foo\|bar/biff`:
+
+    $foo$ => $biff$
+    $bar$ => $biff$
+    $foob$=> $biffb$
 
 ### Mappings
 
