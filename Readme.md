@@ -29,25 +29,25 @@ macro, LatexMathReplace will replace the macro.
 
 `LatexMathReplace foo/bar`:
 
-    foo => foo
-    $foo$ => $bar$
-    \[        \[
-      foo  =>   bar
-    \]        \]
-    $foobar$ => $barbar$
-    $\foobiff$ => $\foobiff$
+    foo         => foo
+    $foo$       => $bar$
+    \[            \[
+      foo       =>   bar
+    \]            \]
+    $foobar$    => $barbar$
+    $\foobiff$  => $\foobiff$
 
 `LatexMathReplace \\foo/\bar`
 
-    $foo$ => $foo$
-    $\foo$ => $\bar$
-    $\foobiff$ => $\foobiff$
+    $foo$       => $foo$
+    $\foo$      => $\bar$
+    $\foobiff$  => $\foobiff$
 
 `LatexMathReplace foo\|bar/biff`:
 
-    $foo$ => $biff$
-    $bar$ => $biff$
-    $foob$=> $biffb$
+    $foo$   => $biff$
+    $bar$   => $biff$
+    $foob$  => $biffb$
 
 ### Mappings
 
