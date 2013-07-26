@@ -29,7 +29,12 @@ macro, LatexMathReplace will replace the macro.
 
 `LatexMathReplace foo/bar`:
 
+    foo => foo
     $foo$ => $bar$
+    \[        \[
+      foo  =>   bar
+    \]        \]
+    $foobar$ => $barbar$
     $\foobiff$ => $\foobiff$
 
 `LatexMathReplace \\foo/\bar`
