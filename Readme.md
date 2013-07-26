@@ -18,6 +18,7 @@ replace:
     \begin{align} ... \end{align}
     \begin{align*} ... \end{align*}
     $ ... $
+    $$ ... $$
     \[ ... \]
 
 Note: LatexMathReplace will not replace partial macros that you have defined

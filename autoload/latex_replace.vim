@@ -11,12 +11,14 @@ function! latex_replace#MathMode(arg)
       \ '\\begin{equation}',
       \ '\\begin{align',
       \ '\\\[',
-      \ '\\\@<!\$']
+      \ '\\\@<!\$',
+      \ '\\\@<!\$\$']
   let end = [
       \ '\\end{equation}',
       \ '\\end{align',
       \ '\\\]',
-      \ '\\\@<!\$']
+      \ '\\\@<!\$',
+      \ '\\\@<!\$\$']
 
   if search_term =~ '^\'
     let search_term = search_term . '\>'
@@ -30,7 +32,7 @@ function! latex_replace#MathMode(arg)
   let bpos[1] = 0
   let view = winsaveview()
 
-  for idx in range(4)
+  for idx in range(len(start))
     call setpos('.', bpos)
     let search = '\(' . start[idx] . internal_match . '\)'
       \ . '\(' . internal_match . end[idx] . '\)'
