@@ -4,7 +4,7 @@ function! latex_replace#MathMode(arg)
   let search_term = splat[0]
   let replace_term = splat[1]
   if len(splat) != 2
-    echomsg 'Erorr: argument must be of the form "foo/bar"'
+    echomsg 'Error: argument must be of the form "foo/bar"'
   endif
   let internal_match = '\_.\{-}'
   let start = [

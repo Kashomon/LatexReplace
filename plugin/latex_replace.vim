@@ -4,7 +4,7 @@
 " \begion{align} ... \end{align}
 " $ .... $
 "
-" Argument: Substute of the form aaoeu/aoeuao.  Note that any literal slashes
+" Argument: Substute of the form 'foo/bar.  Note that any literal slashes
 " must be escaped
 
 command -nargs=1 LatexMathReplace call latex_replace#MathMode(<f-args>)
