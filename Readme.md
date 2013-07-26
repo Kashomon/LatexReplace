@@ -2,7 +2,7 @@
 
 Latex Replace is a Vim Plugin, which currently exposes one command to the user:
 
-      LatexMathReplace
+    LatexMathReplace
 
 This command takes exactly one argument, of the form:
 
