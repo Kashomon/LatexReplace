@@ -28,7 +28,7 @@ macro, LatexMathReplace will replace the macro.
 
 This is the behavior of `LatexMathReplace foo/bar`:
 
-   $foo$ => $bar$
+    $foo$ => $bar$
     $\foobiff$ => $\foobiff$
 
 and `LatexMathReplace \\foo/\bar`
