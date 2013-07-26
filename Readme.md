@@ -21,12 +21,14 @@ replace:
     \[ ... \]
 
 Note: LatexMathReplace will not replace partial macros that you have defined
-with '\newcommand' or similar.  However, if you specify a the full name of a
-macro, you can then replace the macro
+with '\newcommand' or similar.  However, if you specify the full name of a
+macro, LatexMathReplace will replace the macro.
 
-In other words, this is the behavior of `LatexMathReplace foo/bar`:
+### Examples
 
-    $foo$ => $bar$
+This is the behavior of `LatexMathReplace foo/bar`:
+
+   $foo$ => $bar$
     $\foobiff$ => $\foobiff$
 
 and `LatexMathReplace \\foo/\bar`
