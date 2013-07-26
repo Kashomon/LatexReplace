@@ -1,11 +1,11 @@
 function! latex_replace#MathMode(arg)
   "Split on / but allow for \/
   let splat = split(a:arg, '\\\@<!/')
-  let search_term = splat[0]
-  let replace_term = splat[1]
   if len(splat) != 2
     echomsg 'Error: argument must be of the form "foo/bar"'
   endif
+  let search_term = splat[0]
+  let replace_term = splat[1]
   let internal_match = '\_.\{-}'
   let start = [
       \ '\\begin{equation}',
@@ -30,8 +30,8 @@ function! latex_replace#MathMode(arg)
   " Go through each pattern, doing a separate replace for each case.
   for idx in range(4)
     let search = '\(' . start[idx] . internal_match . '\)'
-      \ . '\(' . search_term . '\)'
       \ . '\(' . internal_match . end[idx] . '\)'
-    execute '%s/' . search . '/\1' . replace_term . last_capture_group . '/ge'
+    execute '%s/' . search . "/\\=substitute(submatch(0),'"
+        \ . search_term . "','" . replace_term . "','g')/"
   endfor
 endfunction
