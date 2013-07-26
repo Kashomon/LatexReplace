@@ -16,9 +16,10 @@ function! latex_replace#MathMode(arg)
       \ '\\\]',
       \ '\\\@<!\$']
 
+  " Go through each pattern, doing a separate replace for each case.
   for idx in range(4)
     let search = '\(' . start[idx] . internal_match . '\)'
-      \ . '\(\(\\\h\+\)\@<!' . splat[0] . '\)'
+      \ . '\(\(\\\h*\)\@<!' . splat[0] . '\)'
       \ . '\(' . internal_match . end[idx] . '\)'
     execute '%s/' . search . '/\1' . splat[1] . '\4/ge'
   endfor
